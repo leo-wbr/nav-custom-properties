@@ -1,0 +1,279 @@
+/*
+Site Name: LogiCon Connect EU
+Cycle: BS4
+Office: USA
+Year: 2022
+URL: http://logiconconnect.wbresearch.com
+----------------------------------------------------------------*/
+
+:root {
+  /* New For Navs */
+  --spacer-sm: 0.5em;
+  --spacer-md: 1em;
+  --fs-500: 1em;
+  --br: 0.25em;
+  --event-neutral-100: #fff;
+  --event-neutral-200: #ececec;
+  --event-neutral-300: #bfbfbf;
+  --event-neutral-500: #7f7f7f;
+  --event-neutral-700: #404040;
+  --event-neutral-900: #333;
+  --event-color-accent: #000000;
+
+  /* Default */
+
+  --event-font-primary: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif' !important;
+  --event-font-secondary: 'Poppins', sans-serif !important;
+  --event-color-primary: #ff495a !important;
+  --event-color-secondary: #d42838 !important;
+  --event-info-onscroll: #2855a3 !important;
+  --event-header-color: #666 !important;
+
+  --event-hero: url('http://source.unsplash.com/random/1400x750') center center scroll no-repeat #999;
+  --event-inner-page-strip: url('http://source.unsplash.com/random/1400x450') center center scroll no-repeat #999;
+}
+
+/* Full Width BG Color */
+
+/* --full-bg: var(--event-color-primary); */
+/* --nav-bg: orange; */
+/* --li-bg: var(--event-color-secondary); */
+/* --li-top-fg:red */
+/* --li-fg: red; */
+/* --li-fg-hover: red; */
+/* --btn-bg: red; */
+/* --btn-bg-hover: grey; */
+/* --fs:number */
+
+.front .header-bottom {
+}
+
+@media (min-width: 992px) {
+  .front .header-bottom {
+  }
+  .front .header-bottom.on-scroll {
+  }
+}
+
+.front .header-bottom {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: var(--full-bg, transparent);
+}
+
+.front .header-bottom.on-scroll {
+  background: var(--full-bg, var(--event-neutral-100));
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+/* MOBILE - Setting Hambuger and logo to flex and styling */
+.front .header-bottom .navbar-header {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /* Make Logo and Hamburger White */
+  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
+}
+
+.front .header-bottom.on-scroll .navbar-header {
+  /* Turn Logo and Hamburger Back to original Color */
+  filter: none;
+  -webkit-filter: none;
+}
+
+.front .header-bottom .navbar-header .navbar-brand {
+  order: 1;
+}
+.front .header-bottom .navbar-header .navbar-brand img {
+  max-width: 165px;
+}
+
+.front .header-bottom .navbar-header .navbar-toggle {
+  order: 2;
+  /* Hamburger Styling */
+  height: 45px;
+  width: 45px;
+  border-radius: var(--br);
+  background: transparent;
+  border: 1px double var(--accent-primary, var(--event-neutral-900));
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.front .header-bottom .navbar-header .navbar-toggle .icon-bar {
+  outline: 1px solid var(--accent-secondary, var(--event-neutral-900));
+  width: 100%;
+}
+
+/* Styling Navigation after Hamburger is clicked*/
+.front .header-bottom .navbar-collapse .navbar-nav {
+  background-color: var(--nav-bg, var(--event-neutral-200));
+  padding: var(--spacer-md);
+  border-radius: var(--br);
+  text-align: center;
+}
+.front .header-bottom .navbar-collapse[class*='collaps'] .navbar-nav .dropdown-menu.show {
+  display: flex;
+  flex-flow: column;
+  text-align: inherit;
+}
+
+/* Styling List Items and Links on both collapsible navigations */
+
+.front .header-bottom .navbar-collapse[class*='collaps'] li {
+  padding: var(--spacer-md);
+  border-radius: var(--br);
+}
+
+.front .header-bottom .navbar-collapse[class*='collaps'] li.show {
+  padding-top: 0;
+}
+
+.front .header-bottom .navbar-collapse[class*='collaps'] li:hover li a {
+  color: inherit;
+}
+
+/* Color / Typography */
+.front .header-bottom .navbar-collapse[class*='collaps'] li a {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  color: var(--li-fg, var(--event-neutral-900));
+  font-size: var(--fs, var(--fs-500));
+  font-family: var(--ff, var(--event-font-primary));
+}
+.front .header-bottom .navbar-collapse[class*='collaps'] > ul > li > a {
+  color: var(--li-top-fg, var(--event-neutral-900));
+  font-weight: 700;
+}
+
+.front .header-bottom .navbar-collapse[class*='collaps'] li:hover {
+  background: var(--li-bg, var(--event-neutral-500));
+}
+.front .header-bottom .navbar-collapse[class*='collaps'] li:hover li:hover a {
+  color: var(--li-a-hover, var(--event-neutral-100));
+}
+
+/*  */
+.front .header-bottom .navbar-collapse[class*='collaps'] .dropdown-menu > li:nth-child(even) {
+  background: var(--event-neutral-200);
+}
+/*  */
+
+.front .header-bottom .navbar-collapse[class*='collaps'] li:hover a {
+  color: var(--li-fg-hover, var(--event-neutral-100));
+}
+
+.front .header-bottom .navbar-collapse[class*='collaps'] li a[aria-expanded='true'] {
+  background-color: var(--li-bg, var(--event-neutral-500));
+  color: var(--li-fg, var(--event-neutral-100));
+  padding: var(--spacer-md);
+  border-radius: var(--br);
+}
+
+/* Styling CTA Button */
+
+.front .header-bottom .navbar-collapse[class*='collaps'] > ul > li:last-child {
+  padding: 0px;
+}
+.front .header-bottom .navbar-collapse[class*='collaps'] .navbar-nav > li:last-of-type a {
+  background-color: var(--btn-bg, var(--event-neutral-900));
+  color: var(--btn-fg, var(--event-neutral-100));
+  padding: var(--spacer-md) calc(var(--spacer-md) * 3);
+  border-radius: var(--br);
+}
+.front .header-bottom .navbar-collapse[class*='collaps'] .navbar-nav > li:last-of-type a:hover {
+  background-color: var(--btn-bg-hover, var(--event-neutral-700));
+  color: var(--btn-fg-hover, var(--event-neutral-100));
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Hide Hamburger */
+  .front .header-bottom .navbar-header .navbar-toggle {
+    display: none;
+  }
+  .collapse:not(.show) {
+    display: block;
+  }
+  /*  */
+  .front .header-bottom .navbar {
+    flex-flow: row;
+  }
+  .front .header-bottom .navbar-header {
+    width: inherit;
+  }
+  .front .header-bottom .navbar-collapse .navbar-nav {
+    background: transparent;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap, var(--spacer-sm));
+    padding: 0;
+  }
+  /* Remove Padding */
+
+  .front .header-bottom .navbar-collapse .navbar-nav > li {
+    padding: calc(var(--spacer-sm) * 1.2);
+  }
+  .front .header-bottom:not(.on-scroll) .navbar-collapse[class*='collaps'] .navbar-nav > li > a {
+    color: var(--a-fg-lg, var(--event-neutral-100));
+  }
+
+  .front .header-bottom.scroll .navbar-collapse[class*='collaps'] > ul > li > a {
+    color: var(--a-fg-lg-scroll, var(--event-neutral-900));
+  }
+  .front .header-bottom .navbar-collapse .navbar-nav .dropdown-menu {
+    position: absolute;
+    margin-top: var(--spacer-md);
+    width: max-content;
+  }
+
+  /* Last Button Styling  */
+
+  .front .header-bottom .navbar-collapse[class*='collaps'] .navbar-nav > li:last-of-type a {
+    padding: calc(var(--spacer-sm) * 1.5) calc(var(--spacer-sm) * 1.75);
+  }
+
+  /* Testing */
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    top: 1.25em;
+  }
+  .dropdown > .dropdown-toggle:active {
+    pointer-events: none;
+  }
+
+  /* Styling Hiding on Scroll */
+  .front .header-bottom .navbar-header {
+    max-width: 0px;
+    transform: translateY(-100vh);
+    transition: all 0.2s ease-out;
+  }
+  .front .header-bottom.on-scroll .navbar-header {
+    max-width: inherit;
+    transform: translateY(0);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .front .header-bottom .navbar-collapse .navbar-nav {
+    justify-content: space-around;
+  }
+  .front .header-bottom .navbar-collapse .navbar-nav > li > a {
+    font-size: 0.9em;
+  }
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    top: 1.5em;
+  }
+}
