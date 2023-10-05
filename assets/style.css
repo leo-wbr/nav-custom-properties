@@ -9,6 +9,8 @@ URL: http://logiconconnect.wbresearch.com
 :root {
   --spacer-sm: 0.5em;
   --spacer-md: 1em;
+  --fs-300: 0.75em;
+  --fs-400: 0.85em;
   --fs-500: 1em;
   --br-xs: 0.05em;
   --br-sm: 0.25em;
@@ -34,17 +36,24 @@ URL: http://logiconconnect.wbresearch.com
   --event-inner-page-strip: url('http://source.unsplash.com/random/1400x450') center center scroll no-repeat #999;
 }
 
-/* --bg-full */
-/* --bg-nav */
 /* --fg */
+/* --accent */
+
+/* --bg-full */
+/* --bg-full-p-y */
+
+/* --bg-nav */
+
 /* --bg-tabs */
+/* --bg-tabs-p-y */
+/* --bg-tabs-p-x */
+
 /* --fg-tab */
 
 /* --fg-rev */
 /* --fg-rev-scroll */
 
-/* --dropdown-pos */
-/* --accent */
+/* --logo */
 /* --fs */
 
 /* --btn-bg */
@@ -52,12 +61,14 @@ URL: http://logiconconnect.wbresearch.com
 /* --btn-fg */
 /* --btn-fg-hover */
 
+/*  */
 .front .header-bottom {
   position: fixed;
   top: 0;
   z-index: 999;
   width: 100%;
   background: var(--bg-full, transparent);
+  padding: var(--bg-full-p-y, inherit) 0;
 }
 
 .front .header-bottom.on-scroll {
@@ -88,7 +99,7 @@ URL: http://logiconconnect.wbresearch.com
   order: 1;
 }
 .front .header-bottom .navbar-header .navbar-brand img {
-  max-width: 165px;
+  max-width: var(--logo, 165px);
 }
 
 .front .header-bottom .navbar-header .navbar-toggle {
@@ -144,6 +155,7 @@ URL: http://logiconconnect.wbresearch.com
 .front .header-bottom .navbar-collapse[class*='collaps'] li a:hover {
   color: var(--fg-tabs, var(--event-neutral-100));
 }
+
 .front .header-bottom .navbar-collapse[class*='collaps'] li:hover,
 .front .header-bottom .navbar-collapse[class*='collaps'] ul li a:hover,
 .front .header-bottom .navbar-collapse[class*='collaps'] li > a[aria-expanded='true'] {
@@ -157,14 +169,14 @@ URL: http://logiconconnect.wbresearch.com
 }
 
 .front .header-bottom .navbar-collapse[class*='collaps'] li a {
-  padding: var(--spacer-md);
+  padding: var(--bg-tabs-p-y, var(--spacer-md)) var(--bg-tabs-p-x, var(--spacer-md));
 }
 
 /* Styling CTA Button */
 .front .header-bottom .navbar-collapse[class*='collaps'] .navbar-nav > li:last-of-type a {
   background-color: var(--btn-bg, var(--event-neutral-900));
   color: var(--btn-fg, var(--event-neutral-100));
-  padding: var(--spacer-md) calc(var(--spacer-md) * 3);
+  padding: var(--bg-tabs-p-y, var(--spacer-md)) var(--bg-tabs-p-x, calc(var(--spacer-md) * 3));
   border-radius: var(--br, var(--br-sm));
 }
 .front .header-bottom .navbar-collapse[class*='collaps'] .navbar-nav > li:last-of-type a:hover {
@@ -181,7 +193,23 @@ URL: http://logiconconnect.wbresearch.com
   .collapse:not(.show) {
     display: block;
   }
-  /*  */
+
+  /* Subnav on Hover - Desktop */
+  .front .header-bottom .navbar-collapse .navbar-nav .dropdown-menu {
+    position: absolute;
+    width: max-content;
+  }
+
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+  .dropdown > .dropdown-toggle:active {
+    pointer-events: none;
+  }
+
+  /*  Adding Flex Functionality to desktop view*/
   .front .header-bottom .navbar {
     flex-flow: row;
   }
@@ -192,44 +220,30 @@ URL: http://logiconconnect.wbresearch.com
     background: transparent;
     flex-flow: row;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--gap, var(--spacer-sm));
     padding: 0;
   }
-  /* Remove Padding */
 
+  /* Update Font sizes on scroll */
+  .front .header-bottom.on-scroll .navbar-collapse .navbar-nav li a {
+    font-size: var(--fs, clamp(0.625rem, -0.0417rem + 1.3889vw, 1rem));
+  }
+
+  /* Links Color */
   .front .header-bottom .navbar-collapse[class*='collaps'] > ul > li > a {
     color: var(--fg-rev, var(--event-neutral-100));
   }
-
   .front .header-bottom.on-scroll .navbar-collapse[class*='collaps'] > ul > li > a {
     color: var(--fg-rev-scroll, var(--event-neutral-900));
   }
 
-  .front .header-bottom .navbar-collapse .navbar-nav .dropdown-menu {
-    position: absolute;
-    margin-top: var(--dropdown-pos, 1.9em);
-    width: max-content;
-  }
-
-  /* Last Button Styling  */
-
+  /* Button Styling  */
   .front .header-bottom .navbar-collapse[class*='collaps'] .navbar-nav > li:last-of-type a {
-    padding: calc(var(--spacer-sm) * 1.5) calc(var(--spacer-sm) * 1.75);
-  }
-
-  /* Testing */
-  .dropdown:hover > .dropdown-menu {
-    display: block;
-    top: 1.25em;
-  }
-  .dropdown > .dropdown-toggle:active {
-    pointer-events: none;
+    padding: var(--bg-tabs-p-y, calc(var(--spacer-sm) * 1.5)) var(--bg-tabs-p-x, calc(var(--spacer-md) * 1.75));
   }
 
   /* Styling Hiding on Scroll */
-
   .front .header-bottom .navbar-header {
     max-width: 0px;
     transform: translateY(-100vh);
@@ -245,8 +259,5 @@ URL: http://logiconconnect.wbresearch.com
 @media (min-width: 1200px) {
   .front .header-bottom .navbar-collapse .navbar-nav > li > a {
     font-size: var(--fs, var(--fs-500));
-  }
-  .dropdown:hover > .dropdown-menu {
-    display: block;
   }
 }
