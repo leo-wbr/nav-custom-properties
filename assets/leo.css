@@ -23,10 +23,9 @@
 /* .front .header-bottom */
 
 .header-bottom {
-  --bg-tabs: var(--orange);
-  --btn-bg: var(--indigo);
-  --btn-bg-hover: var(--purple);
 }
 
 @media (min-width: 992px) {
+  .header-bottom {
+  }
 }
