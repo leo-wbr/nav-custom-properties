@@ -11,21 +11,13 @@
   --event-inner-page-strip: url('http://source.unsplash.com/random/1400x450') center center scroll no-repeat #999;
 }
 
+/*** --fg ***/ /*** --accent ***/
 /*** --bg-full ***/ /*** --bg-full-p-y ***/
 /*** --bg-nav ***/
 /*** --bg-tabs ***/ /*** --bg-tabs-p-y ***/ /*** --bg-tabs-p-x ***/
-
-/*** --fg-primary ***/ /*** --fg-secondary ***/ /*** --fg-inner ***/ /*** --accent ***/
-
+/*** --fg-tab ***/
+/*** --fg-rev ***/ /*** --fg-rev-scroll ***/
 /*** --logo ***/ /*** --fs ***/
 /*** --btn-bg ***/ /*** --btn-bg-hover ***/ /*** --btn-fg ***/ /*** --btn-fg-hover ***/
 
 /* .front .header-bottom */
-
-.header-bottom {
-}
-
-@media (min-width: 992px) {
-  .header-bottom {
-  }
-}
