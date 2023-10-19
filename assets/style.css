@@ -33,7 +33,7 @@ body header > .header-bottom {
   padding: var(--bg-full-p-y, inherit) 0;
   max-height: 100vh;
   top: 0;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 @media (min-width: 992px) {
