@@ -13,9 +13,11 @@
 
 /*** --bg-full ***/ /*** --bg-full-p-y ***/
 /*** --bg-nav ***/
-/*** --bg-tabs ***/ /*** --bg-tabs-p-y ***/ /*** --bg-tabs-p-x ***/
 
-/*** --fg-primary ***/ /*** --fg-secondary ***/ /*** --fg-inner ***/ /*** --accent ***/
+/*** --bg-tabs ***/ /*** --bg-tabs-p-y ***/ /*** --bg-tabs-p-x ***/
+/*** --fg-tabs ***/ /*** --fg-primary ***/ /*** --fg-secondary ***/ /*** --fg-inner ***/
+
+/*** --accent ***/
 
 /*** --logo ***/ /*** --fs ***/
 /*** --btn-bg ***/ /*** --btn-bg-hover ***/ /*** --btn-fg ***/ /*** --btn-fg-hover ***/
