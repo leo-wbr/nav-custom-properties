@@ -16,17 +16,18 @@
 /*** --bg-nav ***/
 
 /*** --bg-tabs ***/ /*** --bg-tabs-p-y ***/ /*** --bg-tabs-p-x ***/
-<<<<<<< HEAD
 /*** --fg-tabs ***/ /*** --fg-primary ***/ /*** --fg-secondary ***/ /*** --fg-inner ***/
 
 /*** --accent ***/
 /*** --br ***/
 
-=======
-/*** --fg-tab ***/
-/*** --fg-rev ***/ /*** --fg-rev-scroll ***/
->>>>>>> d63bc61b6925ff43d9d686309ba7bb7a38c7ad53
 /*** --logo ***/ /*** --fs ***/
 /*** --btn-bg ***/ /*** --btn-bg-hover ***/ /*** --btn-fg ***/ /*** --btn-fg-hover ***/
 
-/* .front .header-bottom */
+.front .header-bottom {
+}
+
+@media (min-width: 768px) {
+  .front .header-bottom {
+  }
+}
